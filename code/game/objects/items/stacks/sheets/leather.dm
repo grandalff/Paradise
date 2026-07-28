@@ -139,6 +139,11 @@ GLOBAL_LIST_INIT(xeno_recipes, list (
 GLOBAL_LIST_INIT(leather_recipes, list (
 	new /datum/stack_recipe_list("leather storages", list(
 		new /datum/stack_recipe("wallet", /obj/item/storage/wallet, 1),
+		new /datum/stack_recipe("tanned wallet", /obj/item/storage/wallet/tanned, 1),
+		new /datum/stack_recipe("black wallet", /obj/item/storage/wallet/black, 1),
+		new /datum/stack_recipe("white wallet", /obj/item/storage/wallet/white, 1),
+		new /datum/stack_recipe("pink wallet", /obj/item/storage/wallet/pink, 1),
+		new /datum/stack_recipe("tsf wallet", /obj/item/storage/wallet/tsf, 1),
 		new /datum/stack_recipe("toolbelt", /obj/item/storage/belt/utility, 4),
 		new /datum/stack_recipe("leather satchel", /obj/item/storage/backpack/satchel, 5),
 		new /datum/stack_recipe("briefcase", /obj/item/storage/briefcase, 4),
@@ -147,6 +152,7 @@ GLOBAL_LIST_INIT(leather_recipes, list (
 		)),
 	null,
 	new /datum/stack_recipe("card box", /obj/item/deck/holder, 1),
+	new /datum/stack_recipe("baseball", /obj/item/beach_ball/baseball, 1),
 	new /datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2),
 	new /datum/stack_recipe("botany gloves", /obj/item/clothing/gloves/botanic_leather, 3),
 	new /datum/stack_recipe("leather jacket", /obj/item/clothing/suit/jacket/leather, 7),
@@ -208,7 +214,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 		if(D.hides >= HIDES_COVERED_FULL)
 			to_chat(user, SPAN_WARNING("You can't improve [D] any further!"))
 			return ITEM_INTERACT_COMPLETE
-		
+
 		if(D.plates || D.drake_hides)
 			to_chat(user, SPAN_WARNING("[D] is already protected by a different kind of armor!"))
 			return ITEM_INTERACT_COMPLETE
